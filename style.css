@@ -1,0 +1,248 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 48px;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.song {
+    font-size: small;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.pp-morph {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #7c6cff, #a78bfa);
+  border: 0;
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow:
+    0 8px 24px -8px rgba(124, 108, 255, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition:
+    transform 0.15s,
+    box-shadow 0.25s;
+}
+.pp-morph:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 32px -8px rgba(124, 108, 255, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.pp-morph:focus-visible {
+  outline: 3px solid rgba(124, 108, 255, 0.5);
+  outline-offset: 3px;
+}
+.pp-morph-icon {
+  transition: d 0.35s cubic-bezier(0.5, 0, 0.3, 1.2);
+}
+.pp-morph[aria-pressed="true"] .pp-morph-icon {
+  d: path("M7 5 H10 V19 H7 Z M14 5 H17 V19 H14 Z");
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: #f5f7fa;
+    outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #f5f7fa;
+}
+
+#guessInput {
+width: 100%;
+padding: 16px 20px;
+font-size: 16px;
+border: 2px solid #e0e7ff;
+border-radius: 12px;
+margin-bottom: 20px;
+transition: all 0.3s ease;
+font-family: inherit;
+}
+
+#guessInput:focus {
+outline: none;
+border-color: #667eea;
+box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+background-color: #f8f9fe;
+}
+
+#guessInput::placeholder {
+color: #a0aec0;
+}
+
+#submitBtn {
+width: 100%;
+padding: 14px 24px;
+font-size: 16px;
+font-weight: 600;
+color: white;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border: none;
+border-radius: 12px;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-bottom: 40px;
+box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+#submitBtn:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+#submitBtn:active {
+transform: translateY(0);
+}
+
+.attempts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.attempt-box {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef1f8 100%);
+    border: 2px solid #e0e7ff;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #cbd5e0;
+}
+
+#box1 {
+    border-color: #667eea;
+}
+
+.attempt-box:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+#Restart-game {
+width: 100%;
+padding: 14px 24px;
+font-size: 16px;
+font-weight: 600;
+color: white;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border: none;
+border-radius: 12px;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-top: 40px;
+margin-bottom: 40px;
+box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+#Restart-game:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+#Restart-game:active {
+transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 40px 25px;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    #guessInput,
+    #submitBtn {
+    padding: 12px 16px;
+    font-size: 15px;
+    }
+
+    .attempts {
+        gap: 12px;
+    }
+
+    audio {
+        margin-bottom: 25px;
+    }
+}
+
+/* Animations for attempt boxes */
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.attempt-box {
+    animation: popIn 0.5s ease-out backwards;
+}
+
+.attempt-box:nth-child(1) { animation-delay: 0.1s; }
+.attempt-box:nth-child(2) { animation-delay: 0.2s; }
+.attempt-box:nth-child(3) { animation-delay: 0.3s; }
+.attempt-box:nth-child(4) { animation-delay: 0.4s; }
+.attempt-box:nth-child(5) { animation-delay: 0.5s; }
+.attempt-box:nth-child(6) { animation-delay: 0.6s; }

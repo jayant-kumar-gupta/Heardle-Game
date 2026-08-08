@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heardle - Song Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Heardle</h1>
+
+        <p class="song">Song of the day: </p>
+        <!-- <audio id="songAudio" controls></audio> -->
+        <button class="pp-morph" id="pp-morph" type="button" aria-pressed="false" aria-label="Play" data-pp>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path class="pp-morph-icon" d="M8 5 L8 19 L19 12 Z" fill="currentColor" />
+            </svg>
+        </button>
+
+
+        <input type="text" id="guessInput" placeholder="Guess song name...">
+
+        <button id="submitBtn">Guess</button>
+
+        <div class="attempts">
+            <div class="attempt-box" id="box1">Attemp 1</div>
+            <div class="attempt-box">Attemp 2</div>
+            <div class="attempt-box">Attemp 3</div>
+            <div class="attempt-box">Attemp 4</div>
+            <div class="attempt-box">Attemp 5</div>
+            <div class="attempt-box">Attemp 6</div>
+        </div>
+
+        <button id="Restart-game">Restart Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
