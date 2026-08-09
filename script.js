@@ -148,7 +148,7 @@ function clearSnippetTimer() {
 
 function stopSong() {
     audio.pause();
-    audio.currentTime = 0;
+    audio.currentTime = 10;
     songBtn.setAttribute("aria-pressed", "false");
     songBtn.setAttribute("aria-label", "Play");
 }
@@ -246,7 +246,7 @@ songBtn.addEventListener("click", () => {
     const seconds = durations[Math.min(attempt, durations.length - 1)];
 
     clearSnippetTimer();
-    audio.currentTime = 0;
+    audio.currentTime = 10;
     audio.play();
     songBtn.setAttribute("aria-pressed", "true");
     songBtn.setAttribute("aria-label", "Pause");
