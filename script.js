@@ -40,7 +40,7 @@ const songs = [
         file: "songs/song8.mp3"
     },
     {
-        title: "Jag Maine Tera Naam Ho",
+        title: "Jag Me Tera Naam Ho",
         file: "songs/song9.mp3"
     },
     {
@@ -154,12 +154,10 @@ function stopSong() {
 }
 
 function handleGuess() {
-    if (attempt > 5) {
-        alert("Game Over!");
-        guessInput.disabled = true;
-        submitBtn.disabled = true;
+    if (gameOver) {
         return;
     }
+
     const guess = guessInput.value;
     // Add your guessing logic here
     guessInput.value = "";
@@ -181,23 +179,28 @@ function handleAttemptBox(comment) {
         AttemptBoxes[attempt].textContent = "Win";
         AttemptBoxes[attempt].style.color = "white";
         alert(comment);
+        gameOver = true;
         guessInput.disabled = true;
         submitBtn.disabled = true;
+        stopSong();
         return;
     } else {
         AttemptBoxes[attempt].style.background = "linear-gradient(135deg, #ff2525 0%, #96051b 100%)";
         AttemptBoxes[attempt].textContent = "Fail";
         AttemptBoxes[attempt].style.color = "white";
-        attempt += 1
-
-        // Redirecting to next attempt box
-        if (attempt > 5) {
+        if (attempt === AttemptBoxes.length - 1) {
             gameOver = true;
+            alert("Game Over!");
+            guessInput.disabled = true;
+            submitBtn.disabled = true;
             stopSong();
             return;
-        } else {
-            AttemptBoxes[attempt].style.setProperty("border-color", "#667eea");
         }
+
+        attempt += 1;
+
+        // Redirecting to next attempt box
+        AttemptBoxes[attempt].style.setProperty("border-color", "#667eea");
     }
 }
 
