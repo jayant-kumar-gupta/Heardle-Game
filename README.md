@@ -28,18 +28,6 @@ A browser-based song guessing game inspired by Heardle. Listen to a short audio 
 5. Keep guessing until you identify the song or use all six attempts.
 6. Click **Restart Game** to start over.
 
-## Screenshots
-
-![Initial game state with controls and empty feedback panel](<img>)
-*Initial state: the player can play the opening snippet, enter a guess, and track attempts from the feedback panel.*
-
-![Gameplay state showing failed guesses followed by a correct answer](<img>)
-*Feedback state: wrong attempts are shown in order, and a correct guess ends the round with a win message.*
-
-## Interface and Gameplay States
-
-The interface centers on three actions: play the current snippet, submit a song guess, and restart the round. As guesses are submitted, the feedback panel logs each attempt, highlights incorrect entries, and displays a win message when the correct title is guessed within the six-attempt limit.
-
 ## Project Structure
 
 ```text
