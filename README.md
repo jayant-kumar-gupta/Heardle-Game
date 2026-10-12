@@ -1,0 +1,47 @@
+# Heardle Game
+
+A browser-based song guessing game inspired by Heardle. Listen to a short audio clip and try to identify the song within six attempts.
+
+## Features
+
+- Daily song selection based on the current date
+- Audio snippets that increase in length with each attempt
+- Six guesses per game
+- Instant win and wrong-answer feedback
+- Play/pause audio controls
+- Restart game functionality
+- Responsive interface for desktop and mobile screens
+
+## Built With
+
+- HTML5
+- CSS3
+- JavaScript
+- MP3 audio files
+
+## How to Play
+
+1. Open `index.html` in a web browser.
+2. Click the play button to listen to the song snippet.
+3. Enter your guess in the input field.
+4. Click **Guess** or press **Enter** to submit your answer.
+5. Keep guessing until you identify the song or use all six attempts.
+6. Click **Restart Game** to start over.
+
+## Project Structure
+
+```text
+Heardle-Game/
+├── index.html   # Game layout and controls
+├── style.css    # Styling and responsive design
+├── script.js    # Game logic, audio playback, and scoring
+└── songs/       # Song audio files
+```
+
+## Running Locally
+
+No build tools or dependencies are required. Clone or download the repository, then open `index.html` directly in your browser.
+
+## License
+
+No license has been specified for this project yet.
